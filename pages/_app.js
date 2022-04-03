@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }) {
   const store = createStore(rootReducer, applyMiddleware(thunkMiddleware));
   return (
     <Provider store={store}>
-      <Layout>
+      <Layout style={{"background":"#fff"}}>
         <Header className="header-section" style={{ position: "fixed", zIndex: 1, width: "100%" }}>
           <Menu theme="light" mode="horizontal" defaultSelectedKeys={["2"]}>
             <Menu.Item key="1">nav 1</Menu.Item>
