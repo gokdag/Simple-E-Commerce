@@ -1,6 +1,6 @@
 import Api from "../../api";
 
-export const getProductsAll = () => async (dispatch) => {
+export const getComments = () => async (dispatch) => {
   console.log("getProductsAll");
   dispatch({ type: "GET_COMMENT_LOADING" });
   try {
