@@ -1,6 +1,5 @@
-import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getProductsAll, getProductFirst } from "../src/store/actions/productAction";
+import { getProductsAll } from "../src/store/actions/commentAction";
 export default function Home() {
   const dispatch = useDispatch();
 
@@ -8,6 +7,7 @@ export default function Home() {
     dispatch(getProductsAll());
   };
   const { data, loading, error } = useSelector((store) => store.products);
+  console.log(data);
   if (loading) return "Yükleniyor...";
   return (
     <div>

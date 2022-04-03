@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "antd": "^4.19.2",
     "axios": "^0.26.1",
     "next": "12.1.0",
     "next-redux-wrapper": "^7.0.5",
