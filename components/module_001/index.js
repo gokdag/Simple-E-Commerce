@@ -9,7 +9,7 @@ export default function Module_001() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getModuleItems({ module: "module_001" }));
-  }, [dispatch]);
+  }, []);
 
   const { data, loading, error } = useSelector((store) => store.modules);
   console.log("data", data);
@@ -31,10 +31,10 @@ export default function Module_001() {
     <div className="moduleDefaultDivider">
       <Carousel autoplay={true} >
         {data.moduleData &&
-          data?.moduleData?.items.map((item, index) => {
+          data?.moduleData.module_001?.items.map((item, index) => {
             return (
               <div key={index} image={item.image}>
-                <Image src={item.image} width={1900} height={800} />
+                <Image layout="intrinsic" src={item.image} width={1900} height={800} />
                 <h3 style={contentStyle}>{item.title}</h3>
               </div>
             );

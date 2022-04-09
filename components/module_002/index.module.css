@@ -1,0 +1,5 @@
+.imageWrapper :hover .imageElement{transform: scale(1.05);}
+.imageElement{transition: .35s cubic-bezier(0.4, 0, 1, 1);}
+.productInfo{padding: 5px 0;}
+.productName{font-size: 13px;font-weight: 600;color:#000}
+.linkElement{display:block}

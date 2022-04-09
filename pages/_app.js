@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <Provider store={store}>
       <Layout style={{"background":"#fff"}}>
-        <Header className="header-section" style={{ position: "fixed", zIndex: 1, width: "100%" }}>
+        <Header className="header-section" style={{ position: "fixed", zIndex: 2, width: "100%" }}>
           <Menu theme="light" mode="horizontal" defaultSelectedKeys={["2"]}>
             <Menu.Item key="1">nav 1</Menu.Item>
             <Menu.Item key="2">nav 2</Menu.Item>

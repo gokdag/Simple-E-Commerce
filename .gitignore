@@ -35,3 +35,8 @@ yarn-error.log*
 package-lock.json
 /public/photo1.webp
 /public/photo2.webp
+/public/module_02_1.jpg
+/public/module_02_2.jpg
+/public/module_02_3.jpg
+/public/module_02_4.jpg
+/public/module_02_5.jpg
