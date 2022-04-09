@@ -11,13 +11,10 @@ import "swiper/css";
 import React from "react";
 
 export default function Module_002() {
-  const dispatch = useDispatch();
-  // React.useEffect(() => {
-  //   dispatch(getModuleItems({ module: "module_002" }));
-  // }, []);
 
   const { data, loading, error } = useSelector((store) => store.modules);
-  console.log(data);
+  const moduleItems=data?.moduleData?.find(x=>x?.module_name=="module_002")
+  
   if (loading) {
     return (
       <div className="moduleDefaultDivider" style={{ textAlign: "center" }}>
@@ -28,8 +25,8 @@ export default function Module_002() {
 
   return (
     <Swiper slidesPerView={5} spaceBetween={5}>
-      {data.moduleData &&
-        data?.moduleData.module_002?.items.map((item, index) => {
+      {moduleItems &&
+        moduleItems?.items.map((item, index) => {
           return (
             <SwiperSlide key={index}>
               <Link href="/">

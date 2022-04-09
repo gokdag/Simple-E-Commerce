@@ -1,20 +1,53 @@
 import { useDispatch, useSelector } from "react-redux";
-import { getComments } from "../src/store/actions/commentAction";
-import Module_001 from "../components/module_001";
-import Module_002 from "../components/module_002";
+import { getModuleItems } from "../src/store/actions/moduleAction";
+const moduleJson = require("../public/helper/firmPacket.json");
+import dynamic from "next/dynamic";
+import { useEffect } from "react";
 
 export default function Home() {
+
   const dispatch = useDispatch();
-  const apiCall = () => {
-    dispatch(getComments());
-  };
-  const { data, loading, error } = useSelector((store) => store.comments);
-  if (loading) return "Yükleniyor...";
+  useEffect(() => {
+    dispatch(getModuleItems({ module: "module_001" }));
+  }, [dispatch]);
+
+  const DynamicComponent = (a) =>
+    dynamic(
+      () =>
+        import(`../components/${a}/`)
+          .then((x) => {
+            return x;
+          })
+          .catch((err) => console.log(err)),
+      {
+        // loading: (x) => (
+        //   <p
+        //     style={{
+        //       background: "#000",
+        //       height: "35",
+        //       color: "#fff",
+        //       textAlign: "center",
+        //     }}
+        //   >
+        //     YÜKLENİYOR
+        //   </p>
+        // ),
+      }
+    );
+
+  const arrayofModule = moduleJson.homePage_modules.map((x) =>
+    DynamicComponent(x.module_name)
+  );
+
   return (
     <div style={{ padding: "20px 0" }}>
-      {/* <button onClick={() => apiCall()}>Click!</button> */}
-      <Module_001 />
-      <Module_002 />
+      {/* <Module_001 />
+      <Module_002 /> */}
+      {arrayofModule.map((SelectedModule, i) => (
+        <div key={i} className="homePageModuleWrapper">
+          <SelectedModule></SelectedModule>
+        </div>
+      ))}
     </div>
   );
 }

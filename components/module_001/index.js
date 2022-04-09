@@ -6,13 +6,11 @@ import { Spin } from "antd";
 import Image from "next/image";
 
 export default function Module_001() {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getModuleItems({ module: "module_001" }));
-  }, []);
 
   const { data, loading, error } = useSelector((store) => store.modules);
-  console.log("data", data);
+  const moduleItems = data?.moduleData?.find(
+    (x) => x?.module_name == "module_001"
+  );
   if (loading) {
     return (
       <div className="moduleDefaultDivider" style={{ textAlign: "center" }}>
@@ -24,17 +22,32 @@ export default function Module_001() {
   const contentStyle = {
     textAlign: "center",
     background: "#364d79",
-    color:"#fff",
-    padding:"40px 0"
+    color: "#fff",
+    padding: "40px 0",
   };
   return (
     <div className="moduleDefaultDivider">
-      <Carousel autoplay={true} >
-        {data.moduleData &&
-          data?.moduleData.module_001?.items.map((item, index) => {
+      <Carousel autoplay={true}>
+        {moduleItems &&
+          moduleItems?.items?.map((item, index) => {
             return (
               <div key={index} image={item.image}>
-                <Image layout="intrinsic" src={item.image} width={1900} height={800} />
+                {index == 0 ? (
+                  <Image
+                    priority
+                    layout="intrinsic"
+                    src={item.image}
+                    width={1900}
+                    height={800}
+                  />
+                ) : (
+                  <Image
+                    layout="intrinsic"
+                    src={item.image}
+                    width={1900}
+                    height={800}
+                  />
+                )}
                 <h3 style={contentStyle}>{item.title}</h3>
               </div>
             );

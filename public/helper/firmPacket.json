@@ -1,0 +1,81 @@
+{
+  "homePage_modules": [
+    {
+      "module_name": "module_001",
+      "title": "Günün Fırsatları",
+      "subTitle": "Sadece haftasonuna özel",
+      "items": [
+        {
+          "image": "/photo1.webp",
+          "title": "item 1"
+        },
+        {
+          "image": "/photo2.webp",
+          "title": "item 2"
+        }
+      ]
+    },
+    {
+      "module_name": "module_002",
+      "title": "Özel Fiyatlar",
+      "subTitle": "",
+      "items": [
+        {
+          "image": "/module_02_1.jpg",
+          "title": "Category 1"
+        },
+        {
+          "image": "/module_02_2.jpg",
+          "title": "Category 2"
+        },
+        {
+          "image": "/module_02_3.jpg",
+          "title": "Category 3"
+        },
+        {
+          "image": "/module_02_4.jpg",
+          "title": "Category 4"
+        },
+        {
+          "image": "/module_02_5.jpg",
+          "title": "Category 5"
+        },
+        {
+          "image": "/module_02_1.jpg",
+          "title": "Category 1"
+        },
+        {
+          "image": "/module_02_2.jpg",
+          "title": "Category 2"
+        },
+        {
+          "image": "/module_02_3.jpg",
+          "title": "Category 3"
+        },
+        {
+          "image": "/module_02_4.jpg",
+          "title": "Category 4"
+        },
+        {
+          "image": "/module_02_5.jpg",
+          "title": "Category 5"
+        }
+      ]
+    },
+    {
+      "module_name": "module_001",
+      "title": "Günün Fırsatları",
+      "subTitle": "Sadece haftasonuna özel",
+      "items": [
+        {
+          "image": "/photo1.webp",
+          "title": "item 1"
+        },
+        {
+          "image": "/photo2.webp",
+          "title": "item 2"
+        }
+      ]
+    }
+  ]
+}
