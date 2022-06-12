@@ -5,11 +5,11 @@ import dynamic from "next/dynamic";
 import { useEffect } from "react";
 
 export default function Home() {
-
+  
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getModuleItems({ module: "module_001" }));
-  }, [dispatch]);
+    dispatch(getModuleItems());
+  }, []);
 
   const DynamicComponent = (a) =>
     dynamic(

@@ -5,15 +5,21 @@ import thunkMiddleware from "redux-thunk";
 import { Layout, Menu } from "antd";
 import "antd/dist/antd.css";
 import "../styles/globals.css";
-
+import { composeWithDevTools } from '@redux-devtools/extension';
 function MyApp({ Component, pageProps }) {
   const { Header, Content, Footer } = Layout;
 
-  const store = createStore(rootReducer, applyMiddleware(thunkMiddleware));
+  const store = createStore(
+    rootReducer,
+    composeWithDevTools(applyMiddleware(thunkMiddleware))
+  );
   return (
     <Provider store={store}>
-      <Layout style={{"background":"#fff"}}>
-        <Header className="header-section" style={{ position: "fixed", zIndex: 2, width: "100%" }}>
+      <Layout style={{ background: "#fff" }}>
+        <Header
+          className="header-section"
+          style={{ position: "fixed", zIndex: 2, width: "100%" }}
+        >
           <Menu theme="light" mode="horizontal" defaultSelectedKeys={["2"]}>
             <Menu.Item key="1">nav 1</Menu.Item>
             <Menu.Item key="2">nav 2</Menu.Item>
@@ -26,9 +32,7 @@ function MyApp({ Component, pageProps }) {
         >
           <Component {...pageProps} />
         </Content>
-        <Footer style={{ textAlign: "center" }}>
-          FOOTER
-        </Footer>
+        <Footer style={{ textAlign: "center" }}>FOOTER</Footer>
       </Layout>
     </Provider>
   );

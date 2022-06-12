@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@redux-devtools/extension": "^3.2.2",
     "antd": "^4.19.2",
     "axios": "^0.26.1",
     "next": "12.1.0",
